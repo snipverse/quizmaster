@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useUser } from "../hooks/useUser";
 
-function Header() {
+function Header({ onMenuClick }) {
   const { user } = useUser();
   const [showLogout, setShowLogout] = useState(false);
 
@@ -9,7 +9,29 @@ function Header() {
     <>
       <header className="bg-purple-700 text-white px-4 sm:px-6 py-4">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
-          <h1 className="text-xl sm:text-2xl font-bold">QuizMaster</h1>
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            {/* Hamburger Menu Button - Only visible on mobile/tablet */}
+            <button
+              onClick={onMenuClick}
+              className="lg:hidden p-2 hover:bg-purple-600 rounded transition"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+            <h1 className="text-xl sm:text-2xl font-bold">QuizMaster</h1>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
             <span className="text-sm sm:text-base">Welcome, {user.name}</span>
