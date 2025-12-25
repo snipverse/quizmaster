@@ -3,8 +3,8 @@ import { UserContext } from "./userContextInstance";
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
-    name: "TechName",
-    email: "techname@example.com",
+    name: "Smaran",
+    email: "SmaranAI@example.com",
     role: "Instructor",
   });
 
