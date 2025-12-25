@@ -1,13 +1,10 @@
-function StatsCard({ title, value, icon }) {
+const StatsCard = ({ title, value }) => {
   return (
-    <div className="stats-card">
-      <div className="stats-icon">
-        <i className={icon}></i>
-      </div>
-      <p>{title}</p>
-      <h3>{value}</h3>
+    <div className="bg-white rounded-xl p-5 shadow-sm">
+      <p className="text-gray-500 text-sm">{title}</p>
+      <h3 className="text-2xl font-bold mt-1">{value}</h3>
     </div>
   );
-}
+};
 
 export default StatsCard;
